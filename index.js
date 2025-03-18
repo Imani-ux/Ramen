@@ -3,17 +3,14 @@ const ramens = [
     { id: 2, name: "Miso Ramen", restaurant: "Menya", image: "miso.jpg", rating: 4, comment: "Very flavorful!" },
     { id: 3, name: "Tonkotsu Ramen", restaurant: "Ramen-ya", image: "tonkotsu.jpg" }
 ];
-
-const newImages = document.getElementById('ramen-menu');
-
 function displayRamens() {
-    for (let element of ramens) {
-    const ramenMenu = document.createElement('img');
-        ramenMenu.src = element.image;
-        ramenMenu.alt = element.name;
-        ramenMenu.classList.add('img');
-
-        newImages
+    const ramenMenu = document.getElementById('ramen-menu');
+    ramens.forEach(ramen => {
+        const img = document.createElement('img');
+        img.src = ramen.image;
+        img.alt = ramen.name;
+        img.addEventListener('click', () => handleClick(ramen));
+        ramenMenu.appendChild(img);
     });
 }
 
@@ -23,32 +20,22 @@ function handleClick(ramen) {
         <h2>${ramen.name}</h2>
         <p>Restaurant: ${ramen.restaurant}</p>
         <p>Rating: ${ramen.rating}</p>
-        <p>Comment: ${ramen.comment || 'No comment'}</p>
+        <p>Comment: ${ramen.comment}</p>
     `;
 }
 
 function addSubmitListener() {
-    const form = document.getElementById('ramen-form');
+    const form = document.getElementById('new-ramen-form');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const formData = new FormData(form);
-        const newRamen = {
-            id: ramens.length + 1,
-            name: formData.get('name'),
-            restaurant: formData.get('dish'),
-            image: `${formData.get('dish')}.jpg`,
-            rating: parseInt(formData.get('rating')),
-            comment: formData.get('comments')
-        };
+        const name = document.getElementById('name').value;
+        const restaurant = document.getElementById('restaurant').value;
+        const image = document.getElementById('image').value;
+        const rating = document.getElementById('rating').value;
+        const comment = document.getElementById('comment').value;
+        const newRamen = { id: ramens.length + 1, name, restaurant, image, rating, comment };
         ramens.push(newRamen);
         displayRamens();
-        form.reset();
     });
 }
 
-function main() {
-    displayRamens();
-    addSubmitListener();
-}
-
-document.addEventWireup('DOMContentLoaded', main)/*
