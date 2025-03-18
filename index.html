@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramen-rating-app</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background-image: url('download (1).jpeg');
+        background-size: cover;
+        color: black;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-decoration: double;
+    }
+    h1 {
+        color: rgb(226, 119, 19);
+        background-color: rgb(105, 101, 101);
+        text-decoration: dotted;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 50px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+    img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        cursor: pointer;
+        border-radius: 20px;
+        border-color: rgb(133, 195, 197);
+        border-color: aqua;
+        border-bottom: #ccc;
+        transition: box-shadow;
+    
+        
+        
+    }
+    img:hover {
+        border-color: rgb(85, 194, 70);
+        border-bottom: #f1f1f1;
+        box-shadow: 0 0 15px 5px ;
+        
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 15px;
+        border-radius: 8px;
+        background-color:rgb(150, 151, 139)
+        
+    }
+    label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: left;
+    }
+    input, select, textarea {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    button {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: greenyellow;
+    }
+    button:active {
+        background-color:aqua;
+    }
+    button:focus {
+        outline: none;
+    }
+    button:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+    }
+    button:disabled:hover {
+        background-color: #ccc;
+    }
+    button:disabled:active {
+        background-color: #ccc;
+    }
+    button:disabled:focus {
+        outline: none;
+    }
+    textarea {
+        width: 100%;
+    }
+    h2 {
+        color: rgb(31, 30, 30);
+        background-color: rgb(104, 147, 153);
+        text-decoration: double;
+        font-family: 'arial', sans-serif;
+        font-size: 30px;
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+</style>
+
+<div .class="h1" >
+    <h1>Ramen Rating App</h1>      
+</div>
+<body>
+    <div .class="img".class="img hover" id="ramen-n">
+        
+        <img src="gyukotsu (1).jpg" alt="Ramen">
+        <img src="kojiro.jpg" alt="Ramen">
+        <img src="naruto.jpg" alt="Ramen">
+        <img src="nirvana.jpg" alt="Ramen">
+        <img src="shoyu.jpg" alt="Ramen">
+    
+    </div>
+    
+<div>
+
+    <div >
+
+    <h2>RAMEN</h2>
+    </div>
+    <form action="submit.php" method="post">
+
+        <label for="Name">name
+            <input type="text" id="Name" name="name" required>
+        </label>
+
+        <label for="your dish" input type="text">Restaurant </label>
+        <input type="text">
+
+        <div>
+        <label for="dish-rating">Image</label>
+        <input type="text">
+        </div>
+
+        <label for="comments">Comments</label>
+        <textarea name="comments" id="comments" placeholder="If you have any comments, you can type here"></textarea>
+
+
+
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+   
+</body>
+</html>
